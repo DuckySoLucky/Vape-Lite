@@ -9,7 +9,7 @@ Firstly, huge credits to the Kangaroo's team for cracking vape. I have just made
 This is a new updated server that emulates Vape's server based on Kangaroo's crack since the old one wasn't working anymore.
 
 ### What works?
-- Vape V4 Forge (1.7, 1.8, 1.12)
+- Vape Lite Forge (1.7, 1.8, 1.12)
 - Every module
 - Saving config
 - Editing Profiles
