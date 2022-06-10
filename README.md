@@ -1,6 +1,6 @@
 # Vape Lite
 
-> I do not promote any kind of cheating. This is just for teaching purposes, If u are gonna use this. Im WARNING you, it is not my fault if u get banned.
+> I do not promote any kind of cheating. This is just for learning purposes, If u are gonna use this. I'm WARNING you, it is not my fault if u get banned.
 
 Firstly, huge credits to the Kangaroo's team for cracking vape. I have just made new working server
 
