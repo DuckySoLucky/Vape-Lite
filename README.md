@@ -6,7 +6,7 @@ Firstly, huge credits to the Kangaroo's team for cracking vape. I have just made
 
 # Vape Server
 
-This is a new updated server that emulates Vape's server based on Kangaroo's crack since the old `vape.sexy:8080` does not work anymore.
+This is a new updated server that emulates Vape's server based on Kangaroo's crack since the old one wasn't working anymore.
 
 ### What works?
 - Vape V4 Forge (1.7, 1.8, 1.12)
