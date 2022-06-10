@@ -35,5 +35,4 @@ This is a new updated server that emulates Vape's server based on Kangaroo's cra
 I'm not entirely sure, I just took Kangaroo's crack. People told it's safe, I cannot confirm anything. Few of my friends have been using it for few weeks, nothing happened so it should be safe.
 
 ### Credit
-- Anonymous for Vape
 - The Kangaroo Team for the crack and their old server
