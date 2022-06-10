@@ -8,12 +8,14 @@ import base64
 import requests
 import zipfile
 import hashlib
+import socket
 import json
 import pandas as pd
 from tqdm import tqdm
 from OpenSSL import crypto, SSL
-import socket
 
+SERVER_IP = "localhost"
+SERVER_PORT = 8765
 class bcolors:
     HEADER = '\033[95m'
     OKBLUE = '\033[94m'
@@ -28,9 +30,16 @@ class bcolors:
 SERVER_IP = "localhost"
 SERVER_PORT = 8765
 print("┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓")
-print("┃   Cracked by DuckySoLucky          ┃")
+print("┃   Cracked by DuckySoLucky #Qwack   ┃")
 print("┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛")
 print("") 
+
+print(bcolors.OKGREEN + "Authorized" + bcolors.ENDC + bcolors.UNDERLINE + " » " + bcolors.WARNING + socket.gethostname() + bcolors.ENDC)
+print(bcolors.WARNING + "Remote" + bcolors.ENDC + bcolors.UNDERLINE + " » " + bcolors.OKGREEN + "Connected" + bcolors.ENDC)
+print(bcolors.HEADER + "Local" + bcolors.ENDC + bcolors.UNDERLINE + " » " + bcolors.OKGREEN + "Connected" + bcolors.ENDC)
+print(bcolors.OKCYAN + "Forge" + bcolors.ENDC + bcolors.UNDERLINE + " » " + bcolors.OKGREEN + "Connected" + bcolors.ENDC)
+print(bcolors.OKBLUE + "Lunar" + bcolors.ENDC + bcolors.UNDERLINE + " » " + bcolors.FAIL + "Failed" + bcolors.ENDC)
+print("")
 ##Mapping stuff
 version_map={}
 
@@ -71,9 +80,9 @@ def loadAllMappings(path = "mappings"):
         version_map[version]["method"] = srg_method
         version_map[version]["field"] = srg_field
         if version=='1.8.9' or version=='1.7.10':
-            print(bcolors.OKCYAN + f"{version}" + bcolors.ENDC + bcolors.UNDERLINE + " » " + bcolors.OKGREEN + "Completed" + bcolors.ENDC)
+            print(bcolors.OKCYAN + f"{version}" + bcolors.ENDC + bcolors.UNDERLINE + " » " + bcolors.OKGREEN + "Connected" + bcolors.ENDC)
         else:
-            print(bcolors.OKCYAN + "1.12.2" + bcolors.ENDC + bcolors.UNDERLINE + " » " + bcolors.OKGREEN + "Completed" + bcolors.ENDC)
+            print(bcolors.OKCYAN + "1.12.2" + bcolors.ENDC + bcolors.UNDERLINE + " » " + bcolors.OKGREEN + "Connected" + bcolors.ENDC)
 
 def downloadMappings(path = "mappings"):
     global mapping_urls
@@ -402,8 +411,7 @@ def FileIntegrityCheck(assets_folder = "assets"):
     SingleFileIntegrity("Dump2", DUMP2_HASH)
     SingleFileIntegrity("strings.txt", STRINGS_HASH)
 
-
-
+#https://stackoverflow.com/questions/27164354/create-a-self-signed-x509-certificate-in-python
 def GenerateSSL(cert_file = "cert.pem", key_file = "key.pem"):
     k = crypto.PKey()
     k.generate_key(crypto.TYPE_RSA, 2048)
@@ -691,12 +699,11 @@ def main():
     start_server = websockets.serve(
         handle_client, SERVER_IP, SERVER_PORT, ssl=ssl_context
     )
+    
     print("")
     print("┏━━━━━━━━━━━━━━━━━━━━━━━┓")
     print(f"┃    {SERVER_IP}:{SERVER_PORT}     ┃")
     print("┗━━━━━━━━━━━━━━━━━━━━━━━┛")
-    print("")
-    print(bcolors.FAIL + "Startup Complete" + bcolors.ENDC)
 
     asyncio.get_event_loop().run_until_complete(start_server)
     asyncio.get_event_loop().run_forever()
